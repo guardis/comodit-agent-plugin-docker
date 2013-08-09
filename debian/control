@@ -10,5 +10,5 @@ Package: comodit-agent-plugin-docker
 Architecture: all
 Homepage: http://www.github.com/guardis/comodit-agent-plugin-docker
 XB-Python-Version: ${python:Versions}
-Depends: ${misc:Depends}, ${python:Depends}, python-docker-py
+Depends: ${misc:Depends}, ${python:Depends}, comodit-agent, python-docker-py
 Description: docker manager plugin for comodit-agent
