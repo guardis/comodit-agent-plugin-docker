@@ -1,24 +1,21 @@
 Name:           comodit-agent-plugin-hypervisors
 Version:        #VERSION#
 Release:        #RELEASE#%{dist}
-Summary:        Hypervisors plugin for comodit-agent
+Summary:        Docker controller plugin for comodit-agent
 
 Group:          Development/Languages
 License:        MIT
-URL:            http://github.com/guardis/synapse-hypervisors-plugin
+URL:            http://github.com/guardis/comodit-agent-plugin-hypervisors
 Source0:        %{name}-%{version}-#RELEASE#.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
 
 Requires: comodit-agent >= 1.10.0
-Requires: libvirt-python >= 0.9.4
-Requires: python-cheetah >= 2.4.0
-Requires: pyglobe >= 0.1
 Requires: docker-py >= 0.1.3
 
 %description
-Hypervisors plugin for the comodit-agent
+Docker controller plugin for the comodit-agent
 
 %prep
 %setup -c
@@ -38,22 +35,17 @@ Hypervisors plugin for the comodit-agent
 %{__mkdir} -p %{buildroot}/etc/comodit-agent/plugins/
 %{__mkdir} -p %{buildroot}/etc/comodit-agent/alerts.d/
 
-%{__cp} *.py %{buildroot}/var/lib/comodit-agent/plugins/hypervisors-plugin
-%{__cp} conf/hypervisors.conf %{buildroot}/etc/comodit-agent/plugins
-%{__cp} conf/alerts.d/hypervisors.conf %{buildroot}/etc/comodit-agent/alerts.d
-%{__cp} templates/disk.tmpl %{buildroot}/usr/share/comodit-agent/plugins/hypervisors/templates
-%{__cp} templates/domain.tmpl %{buildroot}/usr/share/comodit-agent/plugins/hypervisors/templates
+%{__cp} *.py %{buildroot}/var/lib/comodit-agent/plugins/comodit-agent-plugin-docker
+%{__cp} conf/docker.conf %{buildroot}/etc/comodit-agent/plugins
+%{__cp} conf/alerts.d/docks.conf %{buildroot}/etc/comodit-agent/alerts.d
 
 %clean
 #%{__rm} -rf %{buildroot}
 
 %files
-%dir /var/lib/comodit-agent/data
 /var/lib/comodit-agent/plugins/hypervisors-plugin/*.py
-%config(noreplace) /etc/comodit-agent/plugins/hypervisors.conf
-%config(noreplace) /etc/comodit-agent/alerts.d/hypervisors.conf
-/usr/share/comodit-agent/plugins/hypervisors/templates/disk.tmpl
-/usr/share/comodit-agent/plugins/hypervisors/templates/domain.tmpl
+%config(noreplace) /etc/comodit-agent/plugins/docker.conf
+%config(noreplace) /etc/comodit-agent/alerts.d/docks.conf
 
 %changelog
 * Fri Jul 13 2012 - raphael.degiusti (at) gmail.com
