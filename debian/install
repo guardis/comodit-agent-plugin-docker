@@ -1,3 +1,3 @@
 *.py /var/lib/comodit-agent/plugins/comodit-agent-plugin-docker
-conf/docker.conf /etc/comodit-agent/plugins/docker.conf
-conf/alerts.d/docks.conf /etc/comodit-agent/alerts.d/docks.conf
+conf/docker.conf /etc/comodit-agent/plugins/
+conf/alerts.d/docks.conf /etc/comodit-agent/alerts.d/
