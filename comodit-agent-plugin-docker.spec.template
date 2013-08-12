@@ -1,11 +1,11 @@
-Name:           comodit-agent-plugin-hypervisors
+Name:           comodit-agent-plugin-docker
 Version:        #VERSION#
 Release:        #RELEASE#%{dist}
 Summary:        Docker controller plugin for comodit-agent
 
 Group:          Development/Languages
 License:        MIT
-URL:            http://github.com/guardis/comodit-agent-plugin-hypervisors
+URL:            http://github.com/guardis/comodit-agent-plugin-docker
 Source0:        %{name}-%{version}-#RELEASE#.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -30,12 +30,11 @@ Docker controller plugin for the comodit-agent
 %{__rm} -rf %{buildroot}
 
 %{__mkdir} -p %{buildroot}/var/lib/comodit-agent/data
-%{__mkdir} -p %{buildroot}/usr/share/comodit-agent/plugins/hypervisors/templates
-%{__mkdir} -p %{buildroot}/var/lib/comodit-agent/plugins/hypervisors-plugin
+%{__mkdir} -p %{buildroot}/var/lib/comodit-agent/plugins/docker-plugin
 %{__mkdir} -p %{buildroot}/etc/comodit-agent/plugins/
 %{__mkdir} -p %{buildroot}/etc/comodit-agent/alerts.d/
 
-%{__cp} *.py %{buildroot}/var/lib/comodit-agent/plugins/comodit-agent-plugin-docker
+%{__cp} *.py %{buildroot}/var/lib/comodit-agent/plugins/docker-plugin
 %{__cp} conf/docker.conf %{buildroot}/etc/comodit-agent/plugins
 %{__cp} conf/alerts.d/docks.conf %{buildroot}/etc/comodit-agent/alerts.d
 
@@ -43,10 +42,11 @@ Docker controller plugin for the comodit-agent
 #%{__rm} -rf %{buildroot}
 
 %files
-/var/lib/comodit-agent/plugins/hypervisors-plugin/*.py
+/var/lib/comodit-agent/plugins/docker-plugin/*.py
 %config(noreplace) /etc/comodit-agent/plugins/docker.conf
 %config(noreplace) /etc/comodit-agent/alerts.d/docks.conf
 
 %changelog
-* Fri Jul 13 2012 - raphael.degiusti (at) gmail.com
+* Fri Aug 12 2013 - raphael.degiusti (at) gmail.com
 - Added first changelog log
+
