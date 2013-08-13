@@ -56,7 +56,8 @@ class DocksController(ResourcesController):
             collection: docks
             id: Antwerp
             attributes:
-                image: ....
+                image: ...
+                source: ...
                 name: hostname
                 memory (MB): ...
                 cpu_share: ...
@@ -78,6 +79,10 @@ class DocksController(ResourcesController):
                     volumes[vol['remote']] = {}
                     binds[vol['local']] = vol['remote']
 
+            # Ensures the image is pulled.
+            client.pull(attributes['image'])
+
+            # Creates the container.
             container_id = client.create_container(attributes['image'],
                                                    attributes['command'],
                                                    ports=ports,
