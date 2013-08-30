@@ -13,8 +13,8 @@ if major != '2' or minor not in ['6', '7']:
 
 requires = ['docker-py >= 0.1.5']
 
-data_files = [('/etc/comodit-agent/plugins', ['conf/docker.conf']),
-              ('/etc/comodit-agent/alerts.d', ['conf/alerts.d/docks.conf'])
+data_files = [('/etc/comodit-agent/plugins', ['conf/docks.conf']),
+              ('/etc/comodit-agent/alerts.d', ['conf/alerts.d/docks.conf']),
               ('/var/lib/comodit-agent/plugins/docker-plugin', ['docks.py', '__init__.py'])]
 
 setup(
