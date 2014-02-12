@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME="comodit-agent-plugin-docker"
-platforms=(epel-6-i386 fedora-17-i386 fedora-18-i386 fedora-19-i386)
+platforms=(epel-6-i386 fedora-17-i386 fedora-18-i386 fedora-19-i386 fedora-20-i386)
 
 cd `dirname $0`
 cd ..
