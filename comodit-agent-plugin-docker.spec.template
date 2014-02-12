@@ -43,7 +43,7 @@ Docker controller plugin for the comodit-agent
 
 %files
 /var/lib/comodit-agent/plugins/docker-plugin/*.py
-%config(noreplace) /etc/comodit-agent/plugins/docker.conf
+%config(noreplace) /etc/comodit-agent/plugins/docks.conf
 %config(noreplace) /etc/comodit-agent/alerts.d/docks.conf
 
 %changelog
