@@ -47,6 +47,6 @@ Docker controller plugin for the comodit-agent
 %config(noreplace) /etc/comodit-agent/alerts.d/docks.conf
 
 %changelog
-* Fri Aug 12 2013 - raphael.degiusti (at) gmail.com
+* Mon Aug 12 2013 Raphael Degiusti raphael.degiusti (at) gmail.com
 - Added first changelog log
 
