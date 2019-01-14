@@ -28,7 +28,7 @@ class DocksController(ResourcesController):
         self.docks = {}
         for key, value in self.config.iteritems():
             self.docks[key] = docker.Client(base_url=value['url'],
-                                            version='1.3')
+                                            version='1.12')
 
     def read(self, res_id=None, attributes=None):
         """

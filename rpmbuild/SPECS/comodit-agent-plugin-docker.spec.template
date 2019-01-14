@@ -13,6 +13,7 @@ BuildArch:      noarch
 
 Requires: comodit-agent >= 1.10.0
 Requires: python-docker-py >= 0.1.3
+Requires: docker
 
 %description
 Docker controller plugin for the comodit-agent
