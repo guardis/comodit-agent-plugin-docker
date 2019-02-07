@@ -22,8 +22,8 @@ do
   fi
 
   # Build packages 
-  sudo HOME=/home/$USERNAME DIST=$tab ARCH=amd64 /usr/sbin/cowbuilder --build ../$tab/comodit-agent-plugin-docker*.dsc 
-  sudo HOME=/home/$USERNAME DIST=$tab ARCH=i386 /usr/sbin/cowbuilder --build ../$tab/comodit-agent-plugin-docker*.dsc
+  sudo HOME=/home/$USERNAME DIST=$tab ARCH=amd64 /usr/sbin/cowbuilder --build ../comodit-agent-plugin-docker*.dsc 
+  sudo HOME=/home/$USERNAME DIST=$tab ARCH=i386 /usr/sbin/cowbuilder --build ../comodit-agent-plugin-docker*.dsc
   
   mkdir -p /home/$USERNAME/$PACKAGES/$tab-amd64 /home/$USERNAME/$PACKAGES/$tab-i386
 
