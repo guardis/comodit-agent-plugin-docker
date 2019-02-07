@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 NAME="comodit-agent-plugin-docker"
