@@ -33,12 +33,9 @@ DIST_DIR=${TMP_DIR}/dist
 dpkg-buildpackage -i -I -rfakeroot
 
 # Clean-up
-#python setup.py clean
+python setup.py clean
 make -f debian/rules clean
 find . -name '*.pyc' -delete
 rm -rf *.egg-info
 rm -f $NAME\_$VERSION.$RELEASE.orig.tar.gz
-rm ../*.changes -f
-rm ../*.dsc -f
-rm ../*.tar.gz -f
 
