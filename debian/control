@@ -2,7 +2,7 @@ Source: comodit-agent-plugin-docker
 Section: python
 Priority: optional
 Maintainer: Raphael De Giusti <raphael.degiusti@gmail.com>
-Build-Depends: debhelper (>=8.0.0~), python-all-dev, cdbs
+Build-Depends: debhelper (>=8.0.0~), python-all-dev, cdbs, python-setuptools
 XS-Python-Version: >=2.6
 Standards-Version: 3.9.1.0
 
