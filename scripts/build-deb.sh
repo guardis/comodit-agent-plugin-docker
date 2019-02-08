@@ -26,8 +26,8 @@ COMMIT=`git describe --tags --long --match "release-${VERSION}" | awk -F"-" '{pr
 MESSAGE="Release $VERSION-$RELEASE-$COMMIT"
 
 # Set version information
-. scripts/build-pkg-functions
-set_version $1 $2
+#. scripts/build-pkg-functions
+#set_version $1 $2
 
 echo $MESSAGE
 
