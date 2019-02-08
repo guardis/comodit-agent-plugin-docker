@@ -28,8 +28,8 @@ unset DEBFULLNAME
 
 # Build package
 DIST_DIR=${TMP_DIR}/dist
-#python setup.py sdist --dist-dir=${DIST_DIR}
-#mv ${DIST_DIR}/$NAME-$VERSION.tar.gz $NAME\_$VERSION.$RELEASE.orig.tar.gz
+python setup.py sdist --dist-dir=${DIST_DIR}
+mv ${DIST_DIR}/$NAME-$VERSION.tar.gz $NAME\_$VERSION.$RELEASE.orig.tar.gz
 dpkg-buildpackage -i -I -rfakeroot
 
 # Clean-up
