@@ -7,9 +7,22 @@ cd `dirname $0`
 cd ..
 
 # Set version information
-VERSION=`git describe --tags --long  | awk -F"-" '{print $2}'`
-RELEASE=`git describe --tags --long | awk -F"-" '{print $3}'`
-COMMIT=`git describe --tags --long | awk -F"-" '{print $4}'`
+if [ -z $1 ]
+then
+  # Get the latest tag on the current branch
+  VERSION=`git describe --abbrev=0 --tags --match "*[^dev]" | awk -F"-" '{print $2}'`
+else
+  VERSION=$1
+fi
+
+if [ -z $2 ]
+then
+  RELEASE=1
+else
+  RELEASE=$2
+fi
+
+COMMIT=`git describe --tags --long --match "release-${VERSION}" | awk -F"-" '{print $4}'`
 MESSAGE="Release $VERSION-$RELEASE-$COMMIT"
 
 # Set version information
